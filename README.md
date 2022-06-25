@@ -1,8 +1,7 @@
-sendEmail function takes 4 arguments
-    - to
-    - subject
-    - text (plain text)
-    - html
+sendEmail function takes 4 arguments - 
+```sh
+    to, subject, text, html
+```
 
 
 In .env file -
