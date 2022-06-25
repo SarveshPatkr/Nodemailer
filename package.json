@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "nodemailer": "^6.7.5"
+  },
+  "name": "nodemailer",
+  "version": "1.0.0",
+  "description": "nodemailer test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sarvesh",
+  "license": "ISC"
+}
