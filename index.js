@@ -1,10 +1,21 @@
 "use strict";
 const nodemailer = require("nodemailer");
 require('dotenv').config();
+// get welcome.html file from /assets/html/welcome.html
+const fs = require("fs");
+const path = require("path");
+const filePathHtml = path.join(__dirname, "assets", "html", "welcome.html");
+// get welcome.txt file from /assets/copy/welcome.txt
+const filePathCopy = path.join(__dirname, "assets", "copy", "welcome.txt");
+
+// read content of welcome.html and welcome.txt and store in variables
+const html = fs.readFileSync(filePathHtml, "utf-8");
+const text = fs.readFileSync(filePathCopy, "utf-8");
+
 
 async function sendEmail(to, subject, text, html) {
   let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com", //"smtp.gmail.com" for using gmail
+    host: "smtp.privateemail.com", //"smtp.gmail.com" for using gmail
     port: 587,
     secure: false,
     auth: {
@@ -21,7 +32,7 @@ async function sendEmail(to, subject, text, html) {
     html: html, // html body
   });
 
-  console.log("Message sent: %s", info.messageId);
+  console.log("Message sent: %s", info);
 }
 
-sendEmail("spatkar131201@gmail.com", "Hello ✔", "Hello world?", "<b>Hello world?</b>").catch(console.error);
+sendEmail("spatkar131201@gmail.com", "Welcome to Frover", text, html).catch(console.error);
