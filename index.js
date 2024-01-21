@@ -35,4 +35,4 @@ async function sendEmail(to, subject, text, html) {
   console.log("Message sent: %s", info);
 }
 
-sendEmail("spatkar131201@gmail.com", "Welcome to Frover", text, html).catch(console.error);
+sendEmail("siddharthmanjrekar1402109@gmail.com", "Welcome to Frover", text, html).catch(console.error);
